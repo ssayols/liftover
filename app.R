@@ -95,8 +95,8 @@ server <- function(input, output, session) {
         # load bsgenome info about the to/from genomes
         #library(chains$bsgenomefrom[i], character.only=TRUE, lib.loc=paste0(getwd(), "/rlib"))
         #library(chains$bsgenometo[i], character.only=TRUE, lib.loc=paste0(getwd(), "/rlib"))
-        genomefrom <- eval(parse(text=paste0(chains$bsgenomefrom[i], "::", genomefrom)))
-        genometo   <- eval(parse(text=paste0(chains$bsgenometo[i], "::", genometo)))
+        genomefrom <- eval(parse(text=paste0(chains$bsgenomefrom[i], "::", chains$bsgenomefrom[i])))
+        genometo   <- eval(parse(text=paste0(chains$bsgenometo[i], "::", chains$bsgenometo[i])))
         
         # add genome info tofrom track
         xfrom <- track()
